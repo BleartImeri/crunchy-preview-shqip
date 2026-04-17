@@ -62,26 +62,45 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 1rem;
+  /* CrunchyTime brand: cream background, deep red primary, golden yellow accent */
+  --background: oklch(0.985 0.015 80);
+  --foreground: oklch(0.22 0.08 30);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.22 0.08 30);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --popover-foreground: oklch(0.22 0.08 30);
+  --primary: oklch(0.52 0.22 28);
+  --primary-foreground: oklch(0.985 0.015 80);
+  --secondary: oklch(0.82 0.18 80);
+  --secondary-foreground: oklch(0.22 0.08 30);
+  --muted: oklch(0.95 0.025 80);
+  --muted-foreground: oklch(0.45 0.05 30);
+  --accent: oklch(0.82 0.18 80);
+  --accent-foreground: oklch(0.22 0.08 30);
+  --destructive: oklch(0.55 0.24 25);
+  --destructive-foreground: oklch(0.985 0.015 80);
+  --border: oklch(0.88 0.04 60);
+  --input: oklch(0.92 0.03 60);
+  --ring: oklch(0.52 0.22 28);
+
+  /* Brand tokens */
+  --brand-red: oklch(0.52 0.22 28);
+  --brand-red-deep: oklch(0.42 0.20 28);
+  --brand-yellow: oklch(0.82 0.18 80);
+  --brand-yellow-deep: oklch(0.72 0.19 70);
+  --brand-cream: oklch(0.985 0.015 80);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.52 0.22 28) 0%, oklch(0.72 0.19 60) 60%, oklch(0.85 0.18 85) 100%);
+  --gradient-sun: radial-gradient(circle at 30% 20%, oklch(0.85 0.18 85) 0%, oklch(0.72 0.19 60) 50%, oklch(0.52 0.22 28) 100%);
+  --gradient-warm: linear-gradient(180deg, oklch(0.985 0.015 80) 0%, oklch(0.94 0.06 75) 100%);
+
+  --shadow-soft: 0 4px 20px -4px oklch(0.42 0.20 28 / 0.18);
+  --shadow-glow: 0 10px 40px -10px oklch(0.52 0.22 28 / 0.45);
+  --shadow-yellow: 0 8px 30px -8px oklch(0.82 0.18 80 / 0.55);
+
+  --font-display: 'Bowlby One', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -132,6 +151,8 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap');
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -140,5 +161,46 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .font-script {
+    font-family: 'Caveat', cursive;
   }
 }
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-sun { background: var(--gradient-sun); }
+  .bg-gradient-warm { background: var(--gradient-warm); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-yellow { box-shadow: var(--shadow-yellow); }
+  .text-brand-red { color: var(--brand-red); }
+  .text-brand-yellow { color: var(--brand-yellow-deep); }
+  .bg-brand-red { background-color: var(--brand-red); }
+  .bg-brand-yellow { background-color: var(--brand-yellow); }
+  .bg-brand-cream { background-color: var(--brand-cream); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.52 0.22 28 / 0.4); }
+  50% { box-shadow: 0 0 0 16px oklch(0.52 0.22 28 / 0); }
+}
+.animate-float-slow { animation: float-slow 5s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 30s linear infinite; }
+.animate-pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
