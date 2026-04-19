@@ -68,11 +68,14 @@ function FoodCard({ it, i, featured }: { it: Item; i: number; featured?: boolean
       whileInView="show"
       viewport={{ once: true, margin: "-60px" }}
       variants={cardVariants}
-      whileHover={{ y: -6 }}
-      className={`group relative rounded-3xl overflow-hidden bg-card border border-border shadow-soft hover:shadow-glow transition-shadow ${
+      whileHover={{ y: -8 }}
+      className={`group relative rounded-3xl overflow-hidden bg-card border border-border shadow-soft hover:shadow-glow transition-all duration-500 ${
         featured ? "lg:row-span-2" : ""
       }`}
     >
+      {/* shimmer sweep on hover */}
+      <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent z-10" />
+
       <div className={`relative overflow-hidden ${featured ? "h-72 lg:h-[28rem]" : "h-56"}`}>
         <img
           src={it.img}
@@ -80,13 +83,13 @@ function FoodCard({ it, i, featured }: { it: Item; i: number; featured?: boolean
           className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80" />
         {it.tag && (
-          <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-[10px] font-bold tracking-wider px-3 py-1 rounded-full uppercase shadow-glow">
+          <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-[10px] font-bold tracking-wider px-3 py-1 rounded-full uppercase shadow-glow animate-pulse-glow">
             {it.tag}
           </span>
         )}
-        <span className="absolute top-3 right-3 bg-secondary text-secondary-foreground font-display text-lg px-3 py-1 rounded-full shadow-yellow">
+        <span className="absolute top-3 right-3 bg-secondary text-secondary-foreground font-display text-lg px-3 py-1 rounded-full shadow-yellow group-hover:scale-110 transition-transform">
           {it.price}
         </span>
       </div>
