@@ -17,6 +17,18 @@ export function Hero() {
         className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-brand-red blur-3xl"
       />
 
+      {/* floating sparks */}
+      {[...Array(6)].map((_, i) => (
+        <motion.span
+          key={i}
+          aria-hidden
+          className="absolute h-2 w-2 rounded-full bg-brand-yellow/70 shadow-glow"
+          style={{ top: `${15 + i * 12}%`, left: `${(i * 17) % 90}%` }}
+          animate={{ y: [0, -20, 0], opacity: [0.3, 1, 0.3] }}
+          transition={{ duration: 3 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.3 }}
+        />
+      ))}
+
       <div className="container mx-auto px-4 pt-12 pb-20 md:pt-20 md:pb-28 relative">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <motion.div
@@ -25,17 +37,22 @@ export function Hero() {
             transition={{ duration: 0.7 }}
             className="text-center md:text-left"
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-secondary/60 border border-secondary px-3 py-1 text-xs font-bold text-brand-red mb-5">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="inline-flex items-center gap-2 rounded-full bg-secondary/60 backdrop-blur border border-secondary px-3 py-1 text-xs font-bold text-brand-red mb-5"
+            >
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
               I HAPUR — 09:00 deri 23:00
-            </div>
+            </motion.div>
 
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-[0.95] text-brand-red">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-[0.95] text-brand-red drop-shadow-[0_4px_20px_rgba(220,38,38,0.25)]">
               Crunchy<span className="text-brand-yellow">yyy</span>
               <br />
               <span className="text-foreground">në zemër të</span>
               <br />
-              <span className="text-brand-red">Pejës.</span>
+              <span className="bg-gradient-to-r from-brand-red via-primary to-brand-red bg-clip-text text-transparent bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">Pejës.</span>
             </h1>
 
             <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-md mx-auto md:mx-0">

@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import chickenCrunchy from "@/assets/chicken-crunchy.jpeg";
 import bigChicken from "@/assets/big-chicken-crunchy.jpeg";
-import sandwich from "@/assets/sandwich-hotdog.jpeg";
+import sandwich from "@/assets/chicken-sandwich-crunchy.jpeg";
 import wrap from "@/assets/wrap.jpeg";
 import fillet from "@/assets/chicken-fillet.jpeg";
 import sticks from "@/assets/crunchy-sticks-new.jpeg";
 import hotdog from "@/assets/hotdog-classic.jpeg";
-import hotdogLoaded from "@/assets/hotdog-loaded.jpeg";
 import pomfrit from "@/assets/pomfrit-new.jpeg";
 
 type Item = {
@@ -32,7 +31,6 @@ const sides: Item[] = [
   { name: "Crunchy Sticks", desc: "Shirita pule të krijuar nga përzierja jonë sekrete, me dy salca.", price: "4.50€", half: "1/2 porcion 3.00€", img: sticks, tag: "Popullor" },
   { name: "Pomfrites", desc: "Pomfrit i artë me erëza shtëpie, i shërbyer i nxehtë.", price: "2.50€", half: "1/2 porcion 1.50€", img: pomfrit },
   { name: "Hot Dog", desc: "Bukë e freskët, pulë krokante, sallatë jeshile dhe majonezë shtëpie.", price: "1.80€", img: hotdog },
-  { name: "Hot Dog Crunchy XL", desc: "Versioni i ngarkuar: pulë krokante, djathë, salca dhe topping krokant.", price: "2.50€", img: hotdogLoaded, tag: "Yll i ri" },
 ];
 
 const drinks = [
@@ -70,11 +68,14 @@ function FoodCard({ it, i, featured }: { it: Item; i: number; featured?: boolean
       whileInView="show"
       viewport={{ once: true, margin: "-60px" }}
       variants={cardVariants}
-      whileHover={{ y: -6 }}
-      className={`group relative rounded-3xl overflow-hidden bg-card border border-border shadow-soft hover:shadow-glow transition-shadow ${
+      whileHover={{ y: -8 }}
+      className={`group relative rounded-3xl overflow-hidden bg-card border border-border shadow-soft hover:shadow-glow transition-all duration-500 ${
         featured ? "lg:row-span-2" : ""
       }`}
     >
+      {/* shimmer sweep on hover */}
+      <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent z-10" />
+
       <div className={`relative overflow-hidden ${featured ? "h-72 lg:h-[28rem]" : "h-56"}`}>
         <img
           src={it.img}
@@ -82,13 +83,13 @@ function FoodCard({ it, i, featured }: { it: Item; i: number; featured?: boolean
           className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-foreground/10 to-transparent opacity-80" />
         {it.tag && (
-          <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-[10px] font-bold tracking-wider px-3 py-1 rounded-full uppercase shadow-glow">
+          <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-[10px] font-bold tracking-wider px-3 py-1 rounded-full uppercase shadow-glow animate-pulse-glow">
             {it.tag}
           </span>
         )}
-        <span className="absolute top-3 right-3 bg-secondary text-secondary-foreground font-display text-lg px-3 py-1 rounded-full shadow-yellow">
+        <span className="absolute top-3 right-3 bg-secondary text-secondary-foreground font-display text-lg px-3 py-1 rounded-full shadow-yellow group-hover:scale-110 transition-transform">
           {it.price}
         </span>
       </div>
