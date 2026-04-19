@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import interior from "@/assets/interior.jpeg";
 
 const features = [
-  { icon: "🍗", title: "Pulë e Freskët", desc: "Vetëm mish pule i freskët, asnjëherë i ngrirë." },
-  { icon: "🔥", title: "Receta Origjinale", desc: "Përzierja jonë sekrete e erëzave që ju ben të kërkoni më shumë." },
+  { icon: "🍗", title: "Pulë e Freskët", desc: "Vetëm pulë e freskët, përgatitur me shije autentike." },
+  { icon: "🔥", title: "Receta Origjinale", desc: "Përzierja jonë sekrete e erëzave që ju bën të kërkoni më shumë." },
   { icon: "⚡", title: "Shërbim i Shpejtë", desc: "Porosit, paguaj dhe shijo brenda pak minutash." },
   { icon: "❤️", title: "Bërë me Dashuri", desc: "Çdo pjatë përgatitet me kujdes nga ekipi ynë." },
 ];
