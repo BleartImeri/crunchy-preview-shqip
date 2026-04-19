@@ -11,9 +11,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "CrunchyTime — Fast Food në zemër të Pejës" },
-      { name: "description", content: "CrunchyTime në Pejë: pulë krokante, sanduiçe, wrap-a dhe hot dog të freskët. Rruga Mbretëresha Teutë, Pejë." },
+      { name: "description", content: "CrunchyTime në Pejë: pulë crispy, sanduiçe, wrap-a dhe hot dog të freskët. Rruga Mbretëresha Teutë, Pejë." },
       { property: "og:title", content: "CrunchyTime — Fast Food në zemër të Pejës" },
-      { property: "og:description", content: "Pulë krokante, sanduiçe dhe wrap-a të freskët në qendër të Pejës." },
+      { property: "og:description", content: "Pulë crispy, sanduiçe dhe wrap-a të freskët në qendër të Pejës." },
       { property: "og:type", content: "website" },
     ],
   }),

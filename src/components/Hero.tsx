@@ -56,7 +56,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-md mx-auto md:mx-0">
-              Pulë krokante, sanduiçe të freskëta, wrap-a të pjekur dhe salca origjinale.
+              Pulë crispy, sanduiçe të freskëta, wrap-a të pjekur dhe salca origjinale.
               Shije e vërtetë fast food, e bërë me dashuri çdo ditë.
             </p>
 

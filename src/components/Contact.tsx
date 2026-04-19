@@ -12,9 +12,9 @@ const schedule = [
 
 export function Contact() {
   const address = "Rruga Mbretëresha Teutë, Pejë";
-  const mapsQuery = encodeURIComponent("Rruga Mbretëresha Teutë, Pejë, Kosovo");
-  const embedSrc = `https://www.google.com/maps?q=${mapsQuery}&output=embed`;
-  const directions = `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`;
+  const coords = "42.6590739,20.2862844";
+  const embedSrc = `https://www.google.com/maps?q=${coords}&z=18&output=embed`;
+  const directions = `https://www.google.com/maps/dir/?api=1&destination=${coords}`;
   const phone = "+383 43 810 800";
 
   return (

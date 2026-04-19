@@ -43,11 +43,11 @@ export function About() {
           >
             <p className="font-script text-3xl text-brand-red">Rreth Nesh</p>
             <h2 className="font-display text-4xl md:text-5xl mt-2">
-              Vendi më <span className="text-brand-red">krokant</span> në Pejë.
+              Vendi më <span className="text-brand-red">crispy</span> në Pejë.
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
               CrunchyTime është një vend i ri fast food në qendër të Pejës, ku pasioni për shijen e mirë
-              takohet me cilësinë e premiumit. Specialiteti ynë? Pulë krokante e përgatitur me
+              takohet me cilësinë e premiumit. Specialiteti ynë? Pulë crispy e përgatitur me
               recetën tonë sekrete, e shërbyer në një ambient modern dhe miqësor.
             </p>
 

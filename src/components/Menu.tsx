@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import chickenCrunchy from "@/assets/chicken-crunchy.jpeg";
+import chickenCheese from "@/assets/chicken-cheese.jpeg";
+import chickenBbq from "@/assets/chicken-bbq.jpeg";
 import bigChicken from "@/assets/big-chicken-crunchy.jpeg";
 import sandwich from "@/assets/chicken-sandwich-crunchy.jpeg";
 import wrap from "@/assets/wrap.jpeg";
@@ -18,19 +20,19 @@ type Item = {
 };
 
 const burgers: Item[] = [
-  { name: "Chicken Crunchy", desc: "Bukë sezami, fileto pule krokante, djathë cheddar, sallatë, domate dhe salcë shtëpie.", price: "2.90€", img: chickenCrunchy, tag: "Best Seller" },
-  { name: "Chicken Cheese", desc: "Klasiku me dyfish djathë cheddar të shkrirë mbi pulën tonë krokante.", price: "2.60€", img: chickenCrunchy },
-  { name: "Chicken BBQ", desc: "Pulë krokante me salcë BBQ të ëmbël-pikante dhe perime të freskëta.", price: "3.00€", img: chickenCrunchy },
+  { name: "Chicken Crunchy", desc: "Bukë sezami, fileto pule crispy, djathë cheddar, sallatë, domate dhe salcë shtëpie.", price: "2.90€", img: chickenCrunchy, tag: "Best Seller" },
+  { name: "Chicken Cheese", desc: "Klasiku me dyfish djathë cheddar të shkrirë mbi pulën tonë crispy.", price: "2.60€", img: chickenCheese },
+  { name: "Chicken BBQ", desc: "Pulë crispy me salcë BBQ të ëmbël-pikante dhe perime të freskëta.", price: "3.00€", img: chickenBbq },
   { name: "Big Chicken Crunchy", desc: "Dyshe e plotë: dy fileto pule, dyfish djathë, sallatë dhe salca shtëpie.", price: "4.60€", img: bigChicken, tag: "XXL" },
-  { name: "Chicken Sandwich Crunchy", desc: "Bukë e zgjatur, pulë krokante, djathë, sallatë dhe salcat tona origjinale.", price: "2.90€", img: sandwich },
+  { name: "Chicken Sandwich Crunchy", desc: "Bukë e zgjatur, pulë crispy, djathë, sallatë dhe salcat tona origjinale.", price: "2.90€", img: sandwich },
   { name: "Chicken Wrap", desc: "Wrap i pjekur në grill me pulë, djathë cheddar, perime dhe salcat tona.", price: "3.00€", img: wrap },
 ];
 
 const sides: Item[] = [
-  { name: "Chicken Fillet", desc: "Fileto pule krokante me pomfrit, sallatë të freskët dhe dy salca.", price: "3.90€", img: fillet, tag: "Plate" },
+  { name: "Chicken Fillet", desc: "Fileto pule crispy me pomfrit, sallatë të freskët dhe dy salca.", price: "3.90€", img: fillet, tag: "Plate" },
   { name: "Crunchy Sticks", desc: "Shirita pule të krijuar nga përzierja jonë sekrete, me dy salca.", price: "4.50€", half: "1/2 porcion 3.00€", img: sticks, tag: "Popullor" },
   { name: "Pomfrites", desc: "Pomfrit i artë me erëza shtëpie, i shërbyer i nxehtë.", price: "2.50€", half: "1/2 porcion 1.50€", img: pomfrit },
-  { name: "Hot Dog", desc: "Bukë e freskët, pulë krokante, sallatë jeshile dhe majonezë shtëpie.", price: "1.80€", img: hotdog },
+  { name: "Hot Dog", desc: "Bukë e freskët, pulë crispy, sallatë jeshile dhe majonezë shtëpie.", price: "1.80€", img: hotdog },
 ];
 
 const drinks = [
@@ -122,7 +124,7 @@ export function Menu() {
         >
           <p className="font-script text-3xl text-brand-red">Menyja jonë</p>
           <h2 className="font-display text-4xl md:text-5xl mt-2">
-            Krokant. I freskët. <span className="text-brand-red">I pakrahasueshëm.</span>
+            Crispy. I freskët. <span className="text-brand-red">I pakrahasueshëm.</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
             Çdo pjatë përgatitet me përbërës të freskët dhe me recetat origjinale të CrunchyTime.
