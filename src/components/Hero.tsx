@@ -1,19 +1,33 @@
+import { motion } from "framer-motion";
 import logo from "@/assets/logo.jpeg";
-import sandwich from "@/assets/sandwich-hotdog.jpeg";
+import sandwich from "@/assets/chicken-crunchy.jpeg";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-warm">
       {/* decorative blobs */}
-      <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-brand-yellow opacity-40 blur-3xl" />
-      <div className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-brand-red opacity-20 blur-3xl" />
+      <motion.div
+        animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.5, 0.4] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-brand-yellow blur-3xl"
+      />
+      <motion.div
+        animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.3, 0.2] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-brand-red blur-3xl"
+      />
 
       <div className="container mx-auto px-4 pt-12 pb-20 md:pt-20 md:pb-28 relative">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="text-center md:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-center md:text-left"
+          >
             <div className="inline-flex items-center gap-2 rounded-full bg-secondary/60 border border-secondary px-3 py-1 text-xs font-bold text-brand-red mb-5">
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
-              GRAND OPENING — Peja
+              I HAPUR — 09:00 deri 23:00
             </div>
 
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-[0.95] text-brand-red">
@@ -30,12 +44,22 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
-              <a href="#menu" className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow hover:scale-105 transition-transform">
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                href="#menu"
+                className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow"
+              >
                 Shiko Menynë
-              </a>
-              <a href="#kontakt" className="inline-flex items-center rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground shadow-yellow hover:scale-105 transition-transform">
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                href="#kontakt"
+                className="inline-flex items-center rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground shadow-yellow"
+              >
                 Na Vizito
-              </a>
+              </motion.a>
             </div>
 
             <div className="mt-8 flex items-center gap-6 justify-center md:justify-start text-sm">
@@ -54,23 +78,35 @@ export function Hero() {
                 <div className="text-xs text-muted-foreground">Vlerësim klientësh</div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* visual */}
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
             <div className="absolute inset-0 bg-gradient-sun rounded-[2rem] blur-2xl opacity-60" />
             <div className="relative rounded-[2rem] overflow-hidden shadow-glow ring-4 ring-secondary/40">
-              <img src={sandwich} alt="Sanduiç dhe hot dog CrunchyTime" className="w-full h-[420px] md:h-[520px] object-cover" />
+              <img src={sandwich} alt="Chicken Crunchy CrunchyTime" className="w-full h-[420px] md:h-[520px] object-cover" />
             </div>
-            <img
+            <motion.img
+              animate={{ y: [0, -12, 0], rotate: [-2, 2, -2] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               src={logo}
               alt="logo"
-              className="absolute -top-6 -left-6 h-24 w-24 md:h-32 md:w-32 rounded-full object-cover ring-4 ring-background shadow-soft animate-float-slow"
+              className="absolute -top-6 -left-6 h-24 w-24 md:h-32 md:w-32 rounded-full object-cover ring-4 ring-background shadow-soft"
             />
-            <div className="absolute -bottom-5 -right-3 bg-primary text-primary-foreground rounded-full px-5 py-3 font-display text-lg shadow-glow rotate-[-6deg]">
+            <motion.div
+              initial={{ scale: 0, rotate: 30 }}
+              animate={{ scale: 1, rotate: -6 }}
+              transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
+              className="absolute -bottom-5 -right-3 bg-primary text-primary-foreground rounded-full px-5 py-3 font-display text-lg shadow-glow"
+            >
               Best Quality!
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
