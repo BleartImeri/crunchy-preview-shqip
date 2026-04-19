@@ -233,7 +233,7 @@ export function Menu() {
               </span>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Salcat tona janë përgatitur në shtëpi çdo ditë — sekreti i shijes CrunchyTime.
+              Salcat tona janë të shijshme — sekreti i shijes CrunchyTime.
             </p>
           </motion.div>
         </div>
