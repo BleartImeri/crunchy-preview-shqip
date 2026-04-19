@@ -30,7 +30,7 @@ export function About() {
               transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
               className="absolute -bottom-6 -right-4 md:-right-8 bg-primary text-primary-foreground rounded-2xl p-5 shadow-glow"
             >
-              <div className="font-display text-3xl">2024</div>
+              <div className="font-display text-3xl">NEW</div>
               <div className="text-xs uppercase tracking-wider">Grand Opening</div>
             </motion.div>
           </motion.div>

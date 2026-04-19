@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import chickenCrunchy from "@/assets/chicken-crunchy.jpeg";
 import bigChicken from "@/assets/big-chicken-crunchy.jpeg";
-import sandwich from "@/assets/sandwich-hotdog.jpeg";
+import sandwich from "@/assets/chicken-sandwich-crunchy.jpeg";
 import wrap from "@/assets/wrap.jpeg";
 import fillet from "@/assets/chicken-fillet.jpeg";
 import sticks from "@/assets/crunchy-sticks-new.jpeg";
 import hotdog from "@/assets/hotdog-classic.jpeg";
-import hotdogLoaded from "@/assets/hotdog-loaded.jpeg";
 import pomfrit from "@/assets/pomfrit-new.jpeg";
 
 type Item = {
@@ -32,7 +31,6 @@ const sides: Item[] = [
   { name: "Crunchy Sticks", desc: "Shirita pule të krijuar nga përzierja jonë sekrete, me dy salca.", price: "4.50€", half: "1/2 porcion 3.00€", img: sticks, tag: "Popullor" },
   { name: "Pomfrites", desc: "Pomfrit i artë me erëza shtëpie, i shërbyer i nxehtë.", price: "2.50€", half: "1/2 porcion 1.50€", img: pomfrit },
   { name: "Hot Dog", desc: "Bukë e freskët, pulë krokante, sallatë jeshile dhe majonezë shtëpie.", price: "1.80€", img: hotdog },
-  { name: "Hot Dog Crunchy XL", desc: "Versioni i ngarkuar: pulë krokante, djathë, salca dhe topping krokant.", price: "2.50€", img: hotdogLoaded, tag: "Yll i ri" },
 ];
 
 const drinks = [
