@@ -168,18 +168,18 @@ export function Menu() {
                 <span className="text-xs font-bold tracking-widest opacity-90">OFERTË SPECIALE</span>
                 <h3 className="font-display text-3xl mt-2 leading-tight">Combo Crunchy</h3>
                 <p className="mt-2 text-sm opacity-90">Chicken Cheese + Pomfrit + Coca Cola</p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wider bg-secondary/90 text-secondary-foreground inline-block rounded-full px-3 py-1">
+                  Vetëm në vend · jo me porosi
+                </p>
               </div>
               <div className="mt-6 flex items-end justify-between relative">
                 <div>
                   <div className="text-xs line-through opacity-70">5.40€</div>
                   <div className="font-display text-4xl">4.50€</div>
                 </div>
-                <a
-                  href="#kontakt"
-                  className="rounded-full bg-secondary text-secondary-foreground px-4 py-2 text-sm font-bold hover:scale-105 transition-transform"
-                >
-                  Porosit
-                </a>
+                <span className="rounded-full bg-secondary text-secondary-foreground px-4 py-2 text-sm font-bold">
+                  Ja vlen!
+                </span>
               </div>
             </motion.article>
           </div>
@@ -233,7 +233,7 @@ export function Menu() {
               </span>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Salcat tona janë përgatitur në shtëpi çdo ditë — sekreti i shijes CrunchyTime.
+              Salcat tona janë të shijshme — sekreti i shijes CrunchyTime.
             </p>
           </motion.div>
         </div>
