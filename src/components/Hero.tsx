@@ -89,11 +89,6 @@ export function Hero() {
                 <div className="font-display text-2xl text-brand-red">€1.80+</div>
                 <div className="text-xs text-muted-foreground">Çmime miqësore</div>
               </div>
-              <div className="h-8 w-px bg-border hidden sm:block" />
-              <div className="hidden sm:block">
-                <div className="font-display text-2xl text-brand-red">⭐ 4.9</div>
-                <div className="text-xs text-muted-foreground">Vlerësim klientësh</div>
-              </div>
             </div>
           </motion.div>
 
