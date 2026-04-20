@@ -97,7 +97,6 @@ function FoodCard({ it, i, featured }: { it: Item; i: number; featured?: boolean
       </div>
       <div className="p-5">
         <h3 className="font-display text-xl text-foreground">{it.name}</h3>
-        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{it.desc}</p>
         {it.half && (
           <div className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-brand-red bg-secondary/40 rounded-full px-3 py-1">
             ½ {it.half}
