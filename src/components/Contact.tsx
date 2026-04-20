@@ -13,6 +13,7 @@ const schedule = [
 export function Contact() {
   const address = "Rruga Mbretëresha Teutë, Pejë";
   const coords = "42.6590739,20.2862844";
+  const embedSrc = `https://www.google.com/maps?q=${coords}&z=18&output=embed`;
   const directions = `https://www.google.com/maps/dir/?api=1&destination=${coords}`;
   const phone = "+383 43 810 800";
 
@@ -105,37 +106,23 @@ export function Contact() {
             </p>
           </motion.div>
 
-          {/* Location CTA */}
-          <motion.a
-            href={directions}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Map */}
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="group relative rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px] bg-card flex flex-col items-center justify-center text-center p-8 hover:ring-brand-red/40 transition-all"
+            className="rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 via-transparent to-brand-yellow/20" />
-            <div className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-brand-yellow/30 blur-3xl" />
-            <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-brand-red/20 blur-3xl" />
-
-            <div className="relative flex flex-col items-center">
-              <div className="h-20 w-20 rounded-full bg-brand-red text-primary-foreground flex items-center justify-center text-4xl shadow-glow mb-5 group-hover:scale-110 transition-transform">
-                📍
-              </div>
-              <p className="font-script text-2xl text-brand-red">Na vizito</p>
-              <h3 className="font-display text-3xl mt-1">Lokacioni ynë</h3>
-              <p className="mt-3 font-semibold text-foreground">{address}</p>
-              <p className="text-sm text-muted-foreground">Kosovë</p>
-
-              <span className="mt-6 inline-flex items-center gap-2 bg-brand-red text-primary-foreground font-bold px-6 py-3 rounded-full shadow-soft group-hover:bg-brand-red/90 transition-colors">
-                Navigo në Google Maps
-                <span aria-hidden>→</span>
-              </span>
-              <p className="mt-3 text-xs text-muted-foreground">Hapet në Google Maps app ose në tab të ri</p>
-            </div>
-          </motion.a>
+            <iframe
+              title="CrunchyTime Lokacioni"
+              src={embedSrc}
+              className="h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </motion.div>
         </div>
       </div>
     </section>
