@@ -105,15 +105,22 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px]"
+            className="relative rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px] group"
           >
             <iframe
               title="CrunchyTime Lokacioni"
               src={embedSrc}
-              className="h-full w-full border-0"
+              className="h-full w-full border-0 pointer-events-none"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
+            />
+            <a
+              href={directions}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Hap lokacionin në Google Maps"
+              className="absolute inset-0"
             />
           </motion.div>
         </div>
