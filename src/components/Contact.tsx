@@ -48,7 +48,14 @@ export function Contact() {
                 <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-2xl shrink-0">📍</div>
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-brand-red">Adresa</div>
-                  <div className="mt-1 font-semibold">{address}</div>
+                  <a
+                    href={directions}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 font-semibold block hover:text-brand-red transition-colors"
+                  >
+                    {address}
+                  </a>
                   <div className="text-sm text-muted-foreground">Kosovë</div>
                 </div>
               </div>
