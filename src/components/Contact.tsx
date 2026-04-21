@@ -112,7 +112,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px]"
+            className="relative rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px]"
           >
             <iframe
               title="CrunchyTime Lokacioni"
@@ -122,6 +122,8 @@ export function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
+            {/* Mask Google's "View larger map" link in the top-left corner */}
+            <div className="pointer-events-none absolute top-0 left-0 h-12 w-44 bg-card" />
           </motion.div>
         </div>
       </div>
