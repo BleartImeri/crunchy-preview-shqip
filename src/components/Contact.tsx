@@ -122,8 +122,8 @@ export function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-            {/* Block clicks on Google's "View larger map" link without covering the map visually */}
-            <div className="absolute top-0 left-0 h-12 w-44" />
+            {/* Block clicks on Google's "View larger map" link (must be above the iframe) */}
+            <div className="absolute top-0 left-0 h-12 w-44 z-10" style={{ background: "transparent" }} />
           </motion.div>
         </div>
       </div>
