@@ -112,12 +112,12 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px]"
+            className="relative rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px] flex flex-col"
           >
             <iframe
               title="CrunchyTime Lokacioni"
               src={embedSrc}
-              className="h-full w-full border-0 pointer-events-none"
+              className="flex-1 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
@@ -126,9 +126,10 @@ export function Contact() {
               href={directions}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Hap në Google Maps"
-              className="absolute inset-0 z-10"
-            />
+              className="bg-primary text-primary-foreground font-semibold text-sm text-center py-3 hover:bg-primary/90 transition-colors"
+            >
+              📍 Hap në Google Maps
+            </a>
           </motion.div>
         </div>
       </div>
