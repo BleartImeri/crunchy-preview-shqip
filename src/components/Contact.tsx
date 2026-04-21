@@ -122,8 +122,8 @@ export function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-            {/* Mask Google's "View larger map" link in the top-left corner */}
-            <div className="pointer-events-none absolute top-0 left-0 h-12 w-44 bg-card" />
+            {/* Block clicks on Google's "View larger map" link without covering the map visually */}
+            <div className="absolute top-0 left-0 h-12 w-44" />
           </motion.div>
         </div>
       </div>
