@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
+import appCss from "@/styles.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -22,6 +23,7 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/logo.jpeg", type: "image/jpeg" },
       { rel: "apple-touch-icon", href: "/logo.jpeg" },
     ],
