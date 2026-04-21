@@ -117,13 +117,18 @@ export function Contact() {
             <iframe
               title="CrunchyTime Lokacioni"
               src={embedSrc}
-              className="h-full w-full border-0"
+              className="h-full w-full border-0 pointer-events-none"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-            {/* Block clicks on Google's "View larger map" link (must be above the iframe) */}
-            <div className="absolute top-0 left-0 h-12 w-44 z-10" style={{ background: "transparent" }} />
+            <a
+              href={directions}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Hap në Google Maps"
+              className="absolute inset-0 z-10"
+            />
           </motion.div>
         </div>
       </div>
