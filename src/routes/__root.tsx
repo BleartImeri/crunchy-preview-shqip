@@ -6,6 +6,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import appCss from "@/styles.css?url";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -54,7 +55,9 @@ function RootComponent() {
         <HeadContent />
       </head>
       <body>
-        <Outlet />
+        <LanguageProvider>
+          <Outlet />
+        </LanguageProvider>
         <Scripts />
       </body>
     </html>
