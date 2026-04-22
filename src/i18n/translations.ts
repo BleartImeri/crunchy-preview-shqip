@@ -1,6 +1,45 @@
 export type Lang = "sq" | "en";
 
-export const translations = {
+type Schedule = ReadonlyArray<{ day: string; hours: string; closed?: boolean }>;
+type Feature = { title: string; desc: string };
+
+export type TranslationKeys = {
+  nav: { menu: string; about: string; gallery: string; contact: string; order: string };
+  hero: {
+    openBadge: string; titlePart1: string; titlePart2: string; titlePart3: string; titlePart4: string;
+    desc: string; ctaMenu: string; ctaVisit: string; stat1Label: string; stat2Label: string; bestQuality: string;
+  };
+  menu: {
+    kicker: string; title1: string; title2: string; desc: string;
+    burgersTitle: string; sidesTitle: string; drinks: string; sauces: string;
+    allSauces: string; saucesNote: string;
+    offerLabel: string; offerTitle: string; offerDesc: string; offerNote: string; offerBadge: string;
+    tagBest: string; tagXXL: string; tagPlate: string; tagPopular: string; halfLabel: string;
+    naturalWater: string; mineralWater: string;
+    items: {
+      chickenCrunchy: string; chickenCheese: string; chickenBbq: string; bigChicken: string;
+      chickenSandwich: string; chickenWrap: string; chickenFillet: string; crunchySticks: string;
+      pomfrites: string; hotDog: string;
+    };
+  };
+  about: {
+    kicker: string; title1: string; title2: string; title3: string; desc: string;
+    grandOpening: string; features: ReadonlyArray<Feature>; interiorAlt: string;
+  };
+  gallery: { kicker: string; title1: string; locationAlt: string };
+  contact: {
+    kicker: string; title1: string; desc: string;
+    addressLabel: string; addressCountry: string; phoneLabel: string; phoneNote: string;
+    hoursTitle: string; closed: string; hoursNote: string; mapTitle: string;
+    schedule: Schedule;
+  };
+  footer: {
+    tagline: string; address: string; hoursTitle: string; hoursWeek: string; hoursTuesday: string;
+    closed: string; contactTitle: string; menu: string; gallery: string; contact: string; rights: string;
+  };
+};
+
+export const translations: Record<Lang, TranslationKeys> = {
   sq: {
     nav: {
       menu: "Menyja",
@@ -227,6 +266,4 @@ export const translations = {
       rights: "All rights reserved.",
     },
   },
-} as const;
-
-export type TranslationKeys = typeof translations["sq"];
+};
