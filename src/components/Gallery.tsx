@@ -7,19 +7,20 @@ import pomfrit from "@/assets/pomfrit-new.jpeg";
 import storefront from "@/assets/storefront.jpeg";
 import fillet from "@/assets/chicken-fillet.jpeg";
 import chickenCrunchy from "@/assets/chicken-crunchy.jpeg";
-
-const photos = [
-  { src: bigChicken, alt: "Big Chicken Crunchy", span: "md:col-span-2 md:row-span-2" },
-  { src: sticks, alt: "Crunchy Sticks" },
-  { src: pomfrit, alt: "Pomfritos" },
-  { src: chickenCrunchy, alt: "Chicken Crunchy" },
-  { src: wrap, alt: "Wrap" },
-  { src: hotdogLoaded, alt: "Hot Dog Crunchy" },
-  { src: fillet, alt: "Chicken Fillet" },
-  { src: storefront, alt: "Lokacioni" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function Gallery() {
+  const { t } = useLanguage();
+  const photos = [
+    { src: bigChicken, alt: "Big Chicken Crunchy", span: "md:col-span-2 md:row-span-2" },
+    { src: sticks, alt: "Crunchy Sticks" },
+    { src: pomfrit, alt: "Pomfritos" },
+    { src: chickenCrunchy, alt: "Chicken Crunchy" },
+    { src: wrap, alt: "Wrap" },
+    { src: hotdogLoaded, alt: "Hot Dog Crunchy" },
+    { src: fillet, alt: "Chicken Fillet" },
+    { src: storefront, alt: t.gallery.locationAlt },
+  ];
   return (
     <section id="galeri" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
@@ -30,9 +31,9 @@ export function Gallery() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <p className="font-script text-3xl text-brand-red">Galeria</p>
+          <p className="font-script text-3xl text-brand-red">{t.gallery.kicker}</p>
           <h2 className="font-display text-4xl md:text-5xl mt-2">
-            Një shije e <span className="text-brand-red">CrunchyTime</span>
+            {t.gallery.title1} <span className="text-brand-red">CrunchyTime</span>
           </h2>
         </motion.div>
 
