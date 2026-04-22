@@ -100,22 +100,16 @@ export function Contact() {
           </motion.div>
 
           {/* Map */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px]"
-          >
+          <div className="relative rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30 min-h-[420px]">
             <iframe
               title={t.contact.mapTitle}
               src={embedSrc}
-              className="h-full w-full border-0"
+              className="absolute inset-0 h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
