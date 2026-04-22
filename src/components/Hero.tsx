@@ -46,20 +46,19 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-secondary/60 backdrop-blur border border-secondary px-3 py-1 text-xs font-bold text-brand-red mb-5"
             >
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
-              I HAPUR — 09:00 deri 23:00
+              {t.hero.openBadge}
             </motion.div>
 
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-[0.95] text-brand-red drop-shadow-[0_4px_20px_rgba(220,38,38,0.25)]">
-              Crunchy<span className="text-brand-yellow">yyy</span>
+              {t.hero.titlePart1}<span className="text-brand-yellow">{t.hero.titlePart2}</span>
               <br />
-              <span className="text-foreground">në zemër të</span>
+              <span className="text-foreground">{t.hero.titlePart3}</span>
               <br />
-              <span className="bg-gradient-to-r from-brand-red via-primary to-brand-red bg-clip-text text-transparent bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">Pejës.</span>
+              <span className="bg-gradient-to-r from-brand-red via-primary to-brand-red bg-clip-text text-transparent bg-[length:200%_auto] animate-[shine_4s_linear_infinite]">{t.hero.titlePart4}</span>
             </h1>
 
             <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-md mx-auto md:mx-0">
-              Pulë crispy, sanduiçe të freskëta, wrap-a të pjekur dhe salca origjinale.
-              Shije e vërtetë fast food, e bërë me dashuri çdo ditë.
+              {t.hero.desc}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
@@ -69,7 +68,7 @@ export function Hero() {
                 href="#menu"
                 className="inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-glow"
               >
-                Shiko Menynë
+                {t.hero.ctaMenu}
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.05 }}
@@ -77,19 +76,19 @@ export function Hero() {
                 href="#kontakt"
                 className="inline-flex items-center rounded-full bg-secondary px-6 py-3 text-sm font-bold text-secondary-foreground shadow-yellow"
               >
-                Na Vizito
+                {t.hero.ctaVisit}
               </motion.a>
             </div>
 
             <div className="mt-8 flex items-center gap-6 justify-center md:justify-start text-sm">
               <div>
                 <div className="font-display text-2xl text-brand-red">100%</div>
-                <div className="text-xs text-muted-foreground">Freskët çdo ditë</div>
+                <div className="text-xs text-muted-foreground">{t.hero.stat1Label}</div>
               </div>
               <div className="h-8 w-px bg-border" />
               <div>
                 <div className="font-display text-2xl text-brand-red">€1.80+</div>
-                <div className="text-xs text-muted-foreground">Çmime miqësore</div>
+                <div className="text-xs text-muted-foreground">{t.hero.stat2Label}</div>
               </div>
             </div>
           </motion.div>
@@ -118,7 +117,7 @@ export function Hero() {
               transition={{ delay: 0.8, type: "spring", stiffness: 200 }}
               className="absolute -bottom-5 -right-3 bg-primary text-primary-foreground rounded-full px-5 py-3 font-display text-lg shadow-glow"
             >
-              Best Quality!
+              {t.hero.bestQuality}
             </motion.div>
           </motion.div>
         </div>
