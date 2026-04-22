@@ -116,6 +116,10 @@ function FoodCard({ it, i, featured }: { it: Item; i: number; featured?: boolean
 }
 
 export function Menu() {
+  const { t } = useLanguage();
+  const burgers = buildBurgers(t);
+  const sides = buildSides(t);
+  const drinks = buildDrinks(t);
   return (
     <section id="menu" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="absolute top-40 -left-20 h-72 w-72 rounded-full bg-brand-yellow opacity-20 blur-3xl" />
@@ -129,19 +133,19 @@ export function Menu() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <p className="font-script text-3xl text-brand-red">Menyja jonë</p>
+          <p className="font-script text-3xl text-brand-red">{t.menu.kicker}</p>
           <h2 className="font-display text-4xl md:text-5xl mt-2">
-            Crispy. I freskët. <span className="text-brand-red">I pakrahasueshëm.</span>
+            {t.menu.title1} <span className="text-brand-red">{t.menu.title2}</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Çdo pjatë përgatitet me përbërës të freskët dhe me recetat origjinale të CrunchyTime.
+            {t.menu.desc}
           </p>
         </motion.div>
 
         {/* Burgers */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-script text-2xl text-brand-red">Burgers & Wraps</span>
+            <span className="font-script text-2xl text-brand-red">{t.menu.burgersTitle}</span>
             <div className="flex-1 h-px bg-border" />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -154,7 +158,7 @@ export function Menu() {
         {/* Sides + Hot Dogs */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-6">
-            <span className="font-script text-2xl text-brand-red">Sticks, Pomfrit & Hot Dog</span>
+            <span className="font-script text-2xl text-brand-red">{t.menu.sidesTitle}</span>
             <div className="flex-1 h-px bg-border" />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -172,11 +176,11 @@ export function Menu() {
             >
               <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-brand-yellow/30 blur-2xl" />
               <div className="relative">
-                <span className="text-xs font-bold tracking-widest opacity-90">OFERTË SPECIALE</span>
-                <h3 className="font-display text-3xl mt-2 leading-tight">Combo Crunchy</h3>
-                <p className="mt-2 text-sm opacity-90">Chicken Cheese + Pomfrit + Coca Cola</p>
+                <span className="text-xs font-bold tracking-widest opacity-90">{t.menu.offerLabel}</span>
+                <h3 className="font-display text-3xl mt-2 leading-tight">{t.menu.offerTitle}</h3>
+                <p className="mt-2 text-sm opacity-90">{t.menu.offerDesc}</p>
                 <p className="mt-3 text-xs font-semibold uppercase tracking-wider bg-secondary/90 text-secondary-foreground inline-block rounded-full px-3 py-1">
-                  Vetëm në vend · jo me porosi
+                  {t.menu.offerNote}
                 </p>
               </div>
               <div className="mt-6 flex items-end justify-between relative">
@@ -185,7 +189,7 @@ export function Menu() {
                   <div className="font-display text-4xl">4.50€</div>
                 </div>
                 <span className="rounded-full bg-secondary text-secondary-foreground px-4 py-2 text-sm font-bold">
-                  Ja vlen!
+                  {t.menu.offerBadge}
                 </span>
               </div>
             </motion.article>
@@ -203,7 +207,7 @@ export function Menu() {
           >
             <div className="flex items-center gap-3 mb-5">
               <span className="text-3xl">🥤</span>
-              <h3 className="font-display text-2xl text-brand-red">Pijet</h3>
+              <h3 className="font-display text-2xl text-brand-red">{t.menu.drinks}</h3>
             </div>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
               {drinks.map((d) => (
@@ -224,7 +228,7 @@ export function Menu() {
           >
             <div className="flex items-center gap-3 mb-5">
               <span className="text-3xl">🌶️</span>
-              <h3 className="font-display text-2xl text-brand-red">Salcat shtëpie</h3>
+              <h3 className="font-display text-2xl text-brand-red">{t.menu.sauces}</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {sauces.map((s) => (
@@ -236,11 +240,11 @@ export function Menu() {
                 </span>
               ))}
               <span className="inline-flex items-center rounded-full bg-primary text-primary-foreground px-3 py-1.5 text-xs font-bold">
-                Të gjitha 0.50€
+                {t.menu.allSauces}
               </span>
             </div>
             <p className="mt-5 text-xs text-muted-foreground">
-              Salcat tona janë të shijshme — sekreti i shijes CrunchyTime.
+              {t.menu.saucesNote}
             </p>
           </motion.div>
         </div>
