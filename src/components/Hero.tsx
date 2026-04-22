@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.jpeg";
 import sandwich from "@/assets/chicken-crunchy.jpeg";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="relative overflow-hidden bg-gradient-warm">
       {/* decorative blobs */}

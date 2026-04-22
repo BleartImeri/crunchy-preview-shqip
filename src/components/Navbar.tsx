@@ -2,16 +2,18 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Menu as MenuIcon, X } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
-
-const links = [
-  { href: "#menu", label: "Menyja" },
-  { href: "#rreth", label: "Rreth Nesh" },
-  { href: "#galeri", label: "Galeria" },
-  { href: "#kontakt", label: "Kontakt" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
+  const links = [
+    { href: "#menu", label: t.nav.menu },
+    { href: "#rreth", label: t.nav.about },
+    { href: "#galeri", label: t.nav.gallery },
+    { href: "#kontakt", label: t.nav.contact },
+  ];
 
   return (
     <motion.header
@@ -37,11 +39,12 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <LanguageToggle />
           <a
             href="#kontakt"
             className="hidden sm:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-glow hover:scale-105 transition-transform"
           >
-            Porosit Tani
+            {t.nav.order}
           </a>
           <button
             onClick={() => setOpen(!open)}
