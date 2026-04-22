@@ -9,6 +9,8 @@ import fillet from "@/assets/chicken-fillet.jpeg";
 import sticks from "@/assets/crunchy-sticks-new.jpeg";
 import hotdog from "@/assets/hotdog-classic.jpeg";
 import pomfrit from "@/assets/pomfrit-new.jpeg";
+import { useLanguage } from "@/i18n/LanguageContext";
+import type { TranslationKeys } from "@/i18n/translations";
 
 type Item = {
   name: string;
@@ -19,35 +21,41 @@ type Item = {
   tag?: string;
 };
 
-const burgers: Item[] = [
-  { name: "Chicken Crunchy", desc: "Bukë sezami, fileto pule crispy, djathë cheddar, sallatë, domate dhe salcë shtëpie.", price: "2.90€", img: chickenCrunchy, tag: "Best Seller" },
-  { name: "Chicken Cheese", desc: "Klasiku me dyfish djathë cheddar të shkrirë mbi pulën tonë crispy.", price: "2.60€", img: chickenCheese },
-  { name: "Chicken BBQ", desc: "Pulë crispy me salcë BBQ të ëmbël-pikante dhe perime të freskëta.", price: "3.00€", img: chickenBbq },
-  { name: "Big Chicken Crunchy", desc: "Dyshe e plotë: dy fileto pule, dyfish djathë, sallatë dhe salca shtëpie.", price: "4.60€", img: bigChicken, tag: "XXL" },
-  { name: "Chicken Sandwich Crunchy", desc: "Bukë e zgjatur, pulë crispy, djathë, sallatë dhe salcat tona origjinale.", price: "2.90€", img: sandwich },
-  { name: "Chicken Wrap", desc: "Wrap i pjekur në grill me pulë, djathë cheddar, perime dhe salcat tona.", price: "3.00€", img: wrap },
-];
+function buildBurgers(t: TranslationKeys): Item[] {
+  return [
+    { name: "Chicken Crunchy", desc: t.menu.items.chickenCrunchy, price: "2.90€", img: chickenCrunchy, tag: t.menu.tagBest },
+    { name: "Chicken Cheese", desc: t.menu.items.chickenCheese, price: "2.60€", img: chickenCheese },
+    { name: "Chicken BBQ", desc: t.menu.items.chickenBbq, price: "3.00€", img: chickenBbq },
+    { name: "Big Chicken Crunchy", desc: t.menu.items.bigChicken, price: "4.60€", img: bigChicken, tag: t.menu.tagXXL },
+    { name: "Chicken Sandwich Crunchy", desc: t.menu.items.chickenSandwich, price: "2.90€", img: sandwich },
+    { name: "Chicken Wrap", desc: t.menu.items.chickenWrap, price: "3.00€", img: wrap },
+  ];
+}
 
-const sides: Item[] = [
-  { name: "Chicken Fillet", desc: "Fileto pule crispy me pomfrit, sallatë të freskët dhe dy salca.", price: "3.90€", img: fillet, tag: "Plate" },
-  { name: "Crunchy Sticks", desc: "Shirita pule të krijuar nga përzierja jonë sekrete, me dy salca.", price: "4.50€", half: "1/2 porcion 3.00€", img: sticks, tag: "Popullor" },
-  { name: "Pomfrites", desc: "Pomfrit i artë me erëza shtëpie, i shërbyer i nxehtë.", price: "2.50€", half: "1/2 porcion 1.50€", img: pomfrit },
-  { name: "Hot Dog", desc: "Bukë e freskët, pulë crispy, sallatë jeshile dhe majonezë shtëpie.", price: "1.80€", img: hotdog },
-];
+function buildSides(t: TranslationKeys): Item[] {
+  return [
+    { name: "Chicken Fillet", desc: t.menu.items.chickenFillet, price: "3.90€", img: fillet, tag: t.menu.tagPlate },
+    { name: "Crunchy Sticks", desc: t.menu.items.crunchySticks, price: "4.50€", half: `${t.menu.halfLabel} 3.00€`, img: sticks, tag: t.menu.tagPopular },
+    { name: "Pomfrites", desc: t.menu.items.pomfrites, price: "2.50€", half: `${t.menu.halfLabel} 1.50€`, img: pomfrit },
+    { name: "Hot Dog", desc: t.menu.items.hotDog, price: "1.80€", img: hotdog },
+  ];
+}
 
-const drinks = [
-  { name: "Coca Cola", price: "1.30€" },
-  { name: "Coca Cola Zero", price: "1.30€" },
-  { name: "Fanta Orange", price: "1.30€" },
-  { name: "Fanta Tropical", price: "1.30€" },
-  { name: "Sprite", price: "1.30€" },
-  { name: "Ice Tea", price: "1.30€" },
-  { name: "Schweppes", price: "1.30€" },
-  { name: "Strawberry", price: "1.30€" },
-  { name: "Peach", price: "1.30€" },
-  { name: "Ujë natyral", price: "0.70€" },
-  { name: "Ujë mineral", price: "1.00€" },
-];
+function buildDrinks(t: TranslationKeys) {
+  return [
+    { name: "Coca Cola", price: "1.30€" },
+    { name: "Coca Cola Zero", price: "1.30€" },
+    { name: "Fanta Orange", price: "1.30€" },
+    { name: "Fanta Tropical", price: "1.30€" },
+    { name: "Sprite", price: "1.30€" },
+    { name: "Ice Tea", price: "1.30€" },
+    { name: "Schweppes", price: "1.30€" },
+    { name: "Strawberry", price: "1.30€" },
+    { name: "Peach", price: "1.30€" },
+    { name: t.menu.naturalWater, price: "0.70€" },
+    { name: t.menu.mineralWater, price: "1.00€" },
+  ];
+}
 
 const sauces = [
   "Garlic Sauce", "BBQ Sauce", "Sweet Chilli", "Sweet & Sour", "Home Sauce", "Home Mayo", "Home Spicy",

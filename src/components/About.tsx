@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import interior from "@/assets/interior.jpeg";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const features = [
-  { icon: "🍗", title: "Pulë e Freskët", desc: "Vetëm pulë e freskët, përgatitur me shije autentike." },
-  { icon: "🔥", title: "Receta Origjinale", desc: "Përzierja jonë sekrete e erëzave që ju bën të kërkoni më shumë." },
-  { icon: "⚡", title: "Shërbim i Shpejtë", desc: "Porosit, paguaj dhe shijo brenda pak minutash." },
-  { icon: "❤️", title: "Bërë me Dashuri", desc: "Çdo pjatë përgatitet me kujdes nga ekipi ynë." },
-];
+const icons = ["🍗", "🔥", "⚡", "❤️"];
 
 export function About() {
+  const { t } = useLanguage();
+  const features = t.about.features.map((f, i) => ({ icon: icons[i], ...f }));
   return (
     <section id="rreth" className="py-20 md:py-28 bg-gradient-warm relative overflow-hidden">
       <div className="container mx-auto px-4 relative">
@@ -21,7 +19,7 @@ export function About() {
             className="relative"
           >
             <div className="rounded-3xl overflow-hidden shadow-glow ring-4 ring-secondary/30">
-              <img src={interior} alt="Interieri i CrunchyTime" className="w-full h-[460px] object-cover" />
+              <img src={interior} alt={t.about.interiorAlt} className="w-full h-[460px] object-cover" />
             </div>
             <motion.div
               initial={{ scale: 0, rotate: 20 }}
@@ -31,7 +29,7 @@ export function About() {
               className="absolute -bottom-6 -right-4 md:-right-8 bg-primary text-primary-foreground rounded-2xl p-5 shadow-glow"
             >
               <div className="font-display text-3xl">NEW</div>
-              <div className="text-xs uppercase tracking-wider">Grand Opening</div>
+              <div className="text-xs uppercase tracking-wider">{t.about.grandOpening}</div>
             </motion.div>
           </motion.div>
 
@@ -41,14 +39,12 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="font-script text-3xl text-brand-red">Rreth Nesh</p>
+            <p className="font-script text-3xl text-brand-red">{t.about.kicker}</p>
             <h2 className="font-display text-4xl md:text-5xl mt-2">
-              Vendi më <span className="text-brand-red">crispy</span> në Pejë.
+              {t.about.title1} <span className="text-brand-red">{t.about.title2}</span> {t.about.title3}
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              CrunchyTime është një vend i ri fast food në qendër të Pejës, ku pasioni për shijen e mirë
-              takohet me cilësinë e premiumit. Specialiteti ynë? Pulë crispy e përgatitur me
-              recetën tonë sekrete, e shërbyer në një ambient modern dhe miqësor.
+              {t.about.desc}
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
